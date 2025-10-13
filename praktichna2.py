@@ -27,7 +27,7 @@ for cnt in contours:
             cx = int(M["m10"]/M["m00"])
             cy = int(M["m01"]/M["m00"])
 
-        approx = cv2.approxPolyDP(cnt, 0.02 * perimeter, True)
+        approx = cv2.approxPolyDP(cnt, 0.01 * perimeter, True)
         if len(approx) == 3:
             shape = "Triangle"
         elif len(approx) == 4:
@@ -56,4 +56,5 @@ cv2.imshow('orig', img)
 cv2.imshow('mask', img_copy)
 cv2.imwrite('result.jpg', img_copy)
 cv2.waitKey(0)
+
 cv2.destroyAllWindows()
