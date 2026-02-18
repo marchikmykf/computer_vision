@@ -34,7 +34,6 @@ def get_stream_url(url):
         print(f" Помилка: {e}")
         return None
 
-print("Завантаження моделі YOLO...")
 model = YOLO(MODEL_PATH)
 
 stream_url = get_stream_url(YOUTUBE_URL)
@@ -114,4 +113,5 @@ while True:
         break
 
 cap.release()
+
 cv2.destroyAllWindows()
